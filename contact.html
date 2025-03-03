@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма зворотнього зв'язку</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="/favicon.png" sizes="any">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
+<script src="js/slideshow.js"></script>
+<nav class="navbar">
+  <a href="index.html" class="bar-item">Домашня</a>
+  <a href="services.html" class="bar-item">Послуги</a>
+  <a href="portfolio.html" class="bar-item">Про нас</a>
+  <a href="contact.html" class="bar-item">Контакти</a>
+</nav>
+<h2 class="form-title">Поділіться вашими враженнями!</h2>
 
+<div class="form-box">
+  <p class="form-subtitle">Це займе лише пару хвилин вашого часу</p>
+  <form action="https://script.google.com/macros/s/AKfycbyEweo9pGqaUkSHB2saq8VVMbVxYfNvaXodF0nSXi1RhTEqcWGOQz_h5BpRzFyKf-zXJA/exec" method="POST" target="_blank">
+    <label for="uname">Ім'я:</label>
+    <input type="text" id="uname" name="entry.123456789" required>
+
+    <label for="email">Пошта:</label>
+    <input type="email" id="email" name="entry.987654321" required>
+
+    <label for="phone">Номер телефону:</label>
+    <input type="tel" id="phone" name="entry.543216789" required>
+
+    <label>Чи задоволені Ви сайтом?</label>
+    <div class="radio-group">
+      <input type="radio" id="yes" name="satisfy" value="Так!!" checked>
+      <label for="yes">Так!!</label>
+
+      <input type="radio" id="no" name="satisfy" value="Ні((" checked>
+      <label for="no">Ні((</label>
+    </div>
+
+    <label for="msg">Напишіть, що Вам не сподобалось:</label>
+    <textarea id="msg" name="entry.654987321" rows="4" required></textarea>
+
+    <button type="submit" id="buttonC">Відправити</button>
+  </form>
+</div>
+<div class="footer">
+  <footer>
+    <p>Розробник: Блаута Вікторія<br>
+      Всі права захищені!<br>
+      Не красти - бо будете биті, я сама кольори підбирала<br>
+      Моя пошта (нижче) :Р </p>
+    <p><a href="mailto:blautavika@gmail.com">blautavika@gmail.com</a></p>
+  </footer>
+</div>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.has('success')) {
+    alert('Дані успішно відправлено!');
+    history.replaceState({}, document.title, window.location.pathname);
+  }
+  if(urlParams.has('error')) {
+    alert('Сталася помилка при відправці');
+    history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
 </body>
 </html>
