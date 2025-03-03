@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -94,9 +93,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
 }
   body {
     font-family: "Garamond", serif;
@@ -125,30 +124,6 @@ textarea {
     background: rgba(20, 49, 9, 0.2);
     border-radius: 5px;
     transform: scale(1.1);
-  }
-  .carousel-container {
-    background-color: #A5B06D;
-    font-family: "Garamond", serif;
-    margin-top: 10px;
-    padding-top: 10px;
-    overflow: hidden;
-    width: auto;
-    position: relative;
-    justify-content: center;
-  }
-  .carousel-wrapper {
-    display: flex;
-    gap: 10px;
-    position: relative;
-  }
-  .MySlides {
-    width: 300px;
-    height: 350px;
-    flex: 0 0 auto;
-    opacity: 0;
-    transition: opacity 1s;
-    border-radius: 7px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
     .news-section {
       padding: 40px 20px;
@@ -211,7 +186,32 @@ textarea {
       font-size: 0.9em;
       margin-bottom: 15px;
     }
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 55px;
+      gap: 10px;
+      padding: 10px;
+    }
 
+    .carousel-wrapper {
+      display: flex;
+      gap: 10px;
+    }
+
+    .MySlides {
+      width: 240px;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .MySlides:hover {
+      opacity: 0.8;
+      transform: translateY(5px);
+    }
     .news-content p {
       color: #444;
       line-height: 1.6;
@@ -453,6 +453,21 @@ textarea {
     }
     .profile-img:hover {
       transform: scale(1.1);
+    }
+    .about h3{
+      margin-top: 10px;
+      color: #153409;
+      font-size: 1.3em;
+      font-family: "Garamond", serif;
+      font-style: normal;
+    }
+    .about a{
+      text-decoration: none;
+      color: #AAAE7F;
+    }
+    .about a:hover{
+      color: #858958;
+      transition: 0.3s ease-in-out;
     }
     @keyframes fadeIn {
       from {
