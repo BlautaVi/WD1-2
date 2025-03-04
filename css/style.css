@@ -17,6 +17,7 @@ html, body {
   text-shadow: none;
 }
 
+
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -99,10 +100,10 @@ textarea {
 }
   body {
     font-family: "Garamond", serif;
-    background-color: #F7F9F1;
+    background-color: #772014;
     overflow-x: hidden;
   .navbar {
-    background: #D0D6B3;
+    background: #19180A;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,33 +112,32 @@ textarea {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(230, 57, 70, 0.5);
   }
   .navbar a {
-    color: #143109 !important;
+    color: white;
     text-decoration: none;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-weight: bold;
+    margin: 0 10px;
     transition: 0.3s ease-in-out;
   }
   .navbar a:hover {
-    background: rgba(20, 49, 9, 0.2);
+    background-color: #772014;
+    color: black;
     border-radius: 5px;
-    transform: scale(1.1);
   }
     .news-section {
       padding: 40px 20px;
-      background: #f8f8f8;
+      background: #19180A;
     }
-
     .section-title {
       text-align: center;
-      color: #143109;
+      color: white;
       font-size: 2.5em;
       margin-bottom: 40px;
       font-family: "Garamond", serif;
     }
-
     .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -147,42 +147,36 @@ textarea {
     }
 
     .news-card {
-      background: #F7F8F2;
+      background: whitesmoke;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
 
     }
-
     .news-card:hover {
       transform: translateY(-5px);
     }
-
     .news-image {
       height: 250px;
       overflow: hidden;
     }
-
     .news-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .news-content {
       padding: 20px;
     }
-
     .news-content h3 {
-      color: #143109;
+      color: #19180A;
       margin-bottom: 10px;
       font-size: 1.4em;
     }
-
     .news-date {
       display: block;
-      color: #666;
+      color: #772014;
       font-size: 0.9em;
       margin-bottom: 15px;
     }
@@ -213,7 +207,7 @@ textarea {
       transform: translateY(5px);
     }
     .news-content p {
-      color: #444;
+      color: #19180A;
       line-height: 1.6;
     }
 
@@ -249,7 +243,7 @@ textarea {
       .services h2 {
         margin-top: 5%;
         font-size: 2em;
-        color: #143109;
+        color: white;
       }
       input, textarea, button {
         width: 100%;
@@ -288,17 +282,17 @@ textarea {
     }
 
     .footer {
-      background-color: #A5B06D;
+      background-color: #772014;
       width: 100%;
       margin-top: auto;
       font-family: "Garamond", serif;
-      font-size: 20px;
+      font-size: 18px;
       text-align: center;
       animation: slideUp 1.5s ease-in-out;
     }
     .footer a {
       margin-top: 15px;
-      color: #F7F8F2;
+      color: #F2EFE9;
       text-decoration: none;
       transition: color 0.3s ease-in-out;
     }
@@ -306,15 +300,16 @@ textarea {
       color: #F7F8F2;
     }
     .footer a:hover {
-      color: #143109;
+      color: #46130C;
     }
     .services {
       text-align: center;
       padding: 50px 20px;
+      background: #19180A;
     }
     .services h2 {
       font-size: 2.5em;
-      color: #143109;
+      color: white;
     }
     .services-grid {
       display: grid;
@@ -355,10 +350,12 @@ textarea {
     .form-title {
       font-family: "Garamond", serif;
       text-align: center;
-      color: #333;
+      color: white;
       margin-top: 5%;
     }
-
+    .contact{
+      background-color:#19180A;
+    }
     .form-box {
       font-family: "Garamond", serif;
       background-color: white;
@@ -412,7 +409,7 @@ textarea {
       transition: 0.3s ease-in-out;
     }
     .about {
-      margin-top: 80px;
+      background-color: #19180A;
       padding: 50px 20px;
       display: flex;
       flex-direction: column;
@@ -454,21 +451,28 @@ textarea {
     .profile-img:hover {
       transform: scale(1.1);
     }
+    .about h1{
+      color: #9D2A1B;
+    }
     .about h3{
       margin-top: 10px;
-      color: #153409;
+      color: white;
       font-size: 1.3em;
       font-family: "Garamond", serif;
       font-style: normal;
     }
     .about a{
       text-decoration: none;
-      color: #AAAE7F;
+      color: #9D2A1B;
     }
     .about a:hover{
-      color: #858958;
+      color: #46130C;
       transition: 0.3s ease-in-out;
     }
+    .about p{
+      color: white;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
