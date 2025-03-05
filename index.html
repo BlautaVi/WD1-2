@@ -29,6 +29,11 @@
     <a href="portfolio.html" class="bar-item">Про нас</a>
     <a href="contact.html" class="bar-item">Контакти</a>
   </nav>
+  <div class = "burger-menu" id="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <section class="carousel-container">
     <div class="carousel-wrapper">
    <img class="MySlides" src="img/img1.jpg" style="width:260px;height:300px;">
@@ -135,6 +140,12 @@
       <p><a href="mailto:blautavika@gmail.com">blautavika@gmail.com</a></p>
     </footer>
   </div>
+  <script>
+    const burgerMenu = document.getElementById('burger-menu');
+    const nav = document.querySelector('.navbar');
+    burgerMenu.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
-
 </html>

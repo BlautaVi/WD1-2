@@ -4,12 +4,13 @@
     box-sizing: border-box;
 }
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
+  width: 100%;
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-family: Georgia, serif;
   display: flex;
+  background-color: #772014;
   flex-direction: column;
 }
 ::-moz-selection {
@@ -97,11 +98,12 @@ textarea {
 (-webkit-min-device-pixel-ratio: 1.25),
 (min-resolution: 1.25dppx),
 (min-resolution: 120dpi) {
-}
   body {
     font-family: Georgia, serif;
     background-color: #772014;
     overflow-x: hidden;
+  }
+}
   .navbar {
     background: #19180A;
     display: flex;
@@ -214,17 +216,59 @@ textarea {
       color: #F1EFE4;
       line-height: 1.6;
     }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .image-wrapper {
+      flex-shrink: 0;
+      padding: 15px;
+    }
 
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+    }
+    .burger-menu span {
+      height: 4px;
+      background-color: white;
+    }
     @media (max-width: 768px) {
+      .body{
+        width: 100%;
+        height: auto;
+      }
       .navbar {
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: sticky;
+        top: 0;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .navbar a {
+        display: block;
+        padding: 12px;
         width: 100%;
       }
-
-      .navbar a {
-        width: 100%;
-        padding: 15px;
+      .burger-menu {
+        display: flex;
       }
       .news-grid {
         grid-template-columns: 1fr;
@@ -232,8 +276,15 @@ textarea {
       .section-title {
         font-size: 2em;
       }
-      .news-image {
-        height: 200px;
+      .news-card,
+      .service-card {
+        max-width: 90vw;
+        margin: 0 auto;
+      }
+      .news-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
       }
       .footer{
         flex-direction: row;
@@ -256,13 +307,8 @@ textarea {
         font-size: 1em;
       }
       .form-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 80%;
-        max-width: 550px;
-        padding: 20px;
+        max-width: 100%;
+        padding: 15px;
       }
       .form-title {
         font-size: 1.5em;
@@ -273,10 +319,19 @@ textarea {
       .Info {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        gap: 20px;
       }
       .profile-img {
-        width: 300px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+      }
+      .text-content {
+        word-wrap: break-word;
+        text-align: center;
+        padding: 10px;
       }
       .text-content h1 {
         font-size: 2em;
@@ -284,6 +339,10 @@ textarea {
       .text-content p {
         font-size: 1em;
       }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
     }
 
     .footer {
@@ -370,11 +429,21 @@ textarea {
     .contact{
       background-color:#19180A;
     }
+    .form-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .form-row input {
+      flex: 1;
+      min-width: 200px;
+    }
+
     .form-box {
       font-family: Georgia, serif;
       background-color: white;
       width: 80%;
-      max-width: 550px;
+      max-width: 660px;
       margin: 20px auto;
       padding: 20px;
       border-radius: 10px;
@@ -414,9 +483,12 @@ textarea {
 
     .radio-group {
       display: flex;
-      gap: 10px;
-      flex-direction: row;
-      margin-top: 5px;
+      gap: 3px;
+      justify-content: center;
+      align-items: center;
+    }
+    .radio-group label {
+      margin: 0;
     }
     button:hover {
       background-color: #218838;
@@ -477,6 +549,7 @@ textarea {
       width: 400px;
       height: auto;
       border-radius: 10px;
+      object-fit: contain;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: transform 0.5s;
     }
@@ -523,5 +596,4 @@ textarea {
         transform: translateY(0);
       }
     }
-  }
 
