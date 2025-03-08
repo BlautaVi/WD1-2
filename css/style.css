@@ -93,7 +93,14 @@ textarea {
 @media only screen and (min-width: 35em) {
 
 }
-
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
 @media print,
 (-webkit-min-device-pixel-ratio: 1.25),
 (min-resolution: 1.25dppx),
@@ -107,7 +114,7 @@ textarea {
   .navbar {
     background: #19180A;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     position: fixed;
@@ -117,6 +124,7 @@ textarea {
     box-shadow: 0px 4px 8px rgba(230, 57, 70, 0.5);
   }
   .navbar a {
+    align-items: center;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -124,83 +132,102 @@ textarea {
     margin: 0 10px;
     transition: 0.3s ease-in-out;
   }
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
   .navbar a:hover {
     background-color: #772014;
     color: black;
     border-radius: 5px;
   }
-    .news-section {
+  .news-section {
       padding: 40px 20px;
       background: black;
     }
-    .section-title {
+  .section-title {
       text-align: center;
       color: white;
       font-size: 2.5em;
       margin-bottom: 40px;
       font-family: Georgia, serif;
     }
-    .news-grid {
+  .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
     }
-    .news-content h3,
-    .news-content p,
-    .news-date {
+  .news-content h3,
+  .news-content p,
+  .news-date {
       color:#F1EFE4;
     }
-    .news-card {
+  .news-card {
       background: #2F0902;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .news-card:hover {
+  .news-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 20px 8px rgba(255, 0, 0, 0.9);
     }
-    .news-image {
+  .news-image {
       height: 250px;
       overflow: hidden;
     }
-    .news-image img {
+  .news-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .news-content {
+  .news-content {
       padding: 20px;
     }
-    .news-content h3 {
+  .news-content h3 {
       color: #F1EFE4;
       margin-bottom: 10px;
       font-size: 1.4em;
     }
-    .news-date {
+  .news-date {
       display: block;
       color: #772014;
       font-size: 0.9em;
       margin-bottom: 15px;
     }
-    .carousel-container {
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 10px;
+    padding: 10px;
+  }
+  .burger-menu {
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .burger-menu span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  .carousel-wrapper {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 55px;
       gap: 10px;
-      padding: 10px;
     }
 
-    .carousel-wrapper {
-      display: flex;
-      gap: 10px;
-    }
-
-    .MySlides {
+  .MySlides {
       width: 240px;
       height: 300px;
       object-fit: cover;
@@ -208,41 +235,29 @@ textarea {
       cursor: pointer;
       border-radius: 10px;
     }
-    .MySlides:hover {
+  .MySlides:hover {
       opacity: 0.8;
       transform: translateY(5px);
     }
-    .news-content p {
+  .news-content p {
       color: #F1EFE4;
       line-height: 1.6;
     }
-    .form-row {
+  .form-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
       margin-bottom: 30px;
     }
-    .form-group {
+  .form-group {
       display: flex;
       flex-direction: column;
     }
-    .image-wrapper {
-      flex-shrink: 0;
-      padding: 15px;
-    }
+  .image-wrapper {
+    flex-shrink: 0;
+    padding: 15px;
+  }
 
-    .burger-menu {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 20px;
-      width: 30px;
-      cursor: pointer;
-    }
-    .burger-menu span {
-      height: 4px;
-      background-color: white;
-    }
     @media (max-width: 768px) {
       .body{
         width: 100%;
@@ -255,6 +270,12 @@ textarea {
         position: sticky;
         top: 0;
       }
+      .carousel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+      }
       .form-row {
         grid-template-columns: 1fr;
         gap: 0;
@@ -262,13 +283,55 @@ textarea {
       .form-group {
         margin-bottom: 15px;
       }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background: #19180A;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+      }
+
       .navbar a {
-        display: block;
-        padding: 12px;
+        padding: 15px 20px;
+        margin: 10px 0;
         width: 100%;
+        text-align: center;
       }
       .burger-menu {
         display: flex;
+        align-items: center;
+        height: 25px;
+      }
+      .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .about {
+        background-color: black;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
       }
       .news-grid {
         grid-template-columns: 1fr;
@@ -318,33 +381,41 @@ textarea {
       }
       .Info {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        text-align: center;
       }
       .profile-img {
         width: 100%;
+        max-width: 300px;
         height: auto;
-        object-fit: contain;
-        display: block;
         margin: 0 auto;
       }
       .text-content {
-        word-wrap: break-word;
-        text-align: center;
-        padding: 10px;
+        margin-top: 20px;
+        padding: 15px;
+        width: 100%;
+        box-shadow: 0 0 10px red;
       }
       .text-content h1 {
         font-size: 2em;
       }
       .text-content p {
         font-size: 1em;
+        max-width: 100%;
+      }
+      .text-content h3 {
+        font-size: 1.1em;
+      }
+      .image-wrapper {
+        width: 100%;
+        max-width: 300px;
       }
       .form-row {
         grid-template-columns: 1fr;
       }
-
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
     }
-
     .footer {
       background-color: #772014;
       width: 100%;
@@ -513,26 +584,23 @@ textarea {
       animation: fadeIn 1.5s ease-in-out;
     }
     .Info{
-      max-width: 1200px;
-      padding: 20px;
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-      background-color: black;
+      gap: 20px;
+      padding: 20px;
       animation: fadeIn 1.5s ease-in-out;
     }
 
     .text-content {
+      flex: 1;
       margin-top: 50px;
       background-color: black;
       color: white;
       padding: 20px;
       box-shadow: 0 0 15px red;
       border-radius: 10px;
-      display: inline-block;
       text-align: start;
+      width: 100%;
     }
     .text-content h1 {
       text-align: center;
@@ -546,10 +614,10 @@ textarea {
       max-width: 600px;
     }
     .profile-img {
-      width: 400px;
+      width: 100%;
       height: auto;
       border-radius: 10px;
-      object-fit: contain;
+      /*object-fit: contain;*/
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: transform 0.5s;
     }
@@ -575,7 +643,13 @@ textarea {
     .about p{
       color: white;
     }
-
+    .image-wrapper {
+      flex-shrink: 0;
+      padding: 15px;
+      width: 400px;
+      display: flex;
+      justify-content: center;
+    }
     @keyframes fadeIn {
       from {
         opacity: 0;

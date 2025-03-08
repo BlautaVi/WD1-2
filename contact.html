@@ -11,10 +11,17 @@
 </head>
 <body>
 <nav class="navbar">
-  <a href="index.html" class="bar-item">Домашня</a>
-  <a href="services.html" class="bar-item">Послуги</a>
-  <a href="portfolio.html" class="bar-item">Про нас</a>
-  <a href="contact.html" class="bar-item">Контакти</a>
+  <div class="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="bar-item">Домашня</a>
+    <a href="services.html" class="bar-item">Послуги</a>
+    <a href="portfolio.html" class="bar-item">Про нас</a>
+    <a href="contact.html" class="bar-item">Контакти</a>
+  </div>
 </nav>
 <div class="contact">
 <h2 class="form-title">Поділіться вашими враженнями!</h2>
@@ -62,15 +69,22 @@
   </footer>
 </div>
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  if(urlParams.has('success')) {
-    alert('Дані успішно відправлено!');
-    history.replaceState({}, document.title, window.location.pathname);
-  }
-  if(urlParams.has('error')) {
-    alert('Сталася помилка при відправці');
-    history.replaceState({}, document.title, window.location.pathname);
-  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  });
 </script>
 </body>
 </html>

@@ -10,13 +10,19 @@
   <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
-
-    <nav class="navbar">
-      <a href="index.html" class="bar-item">Домашня</a>
-      <a href="services.html" class="bar-item">Послуги</a>
-      <a href="portfolio.html" class="bar-item">Про нас</a>
-      <a href="contact.html" class="bar-item">Контакти</a>
-    </nav>
+<nav class="navbar">
+  <div class="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="bar-item">Домашня</a>
+    <a href="services.html" class="bar-item">Послуги</a>
+    <a href="portfolio.html" class="bar-item">Про нас</a>
+    <a href="contact.html" class="bar-item">Контакти</a>
+  </div>
+</nav>
     <section class="services">
       <h2> <br>Наші послуги</h2>
       <div class="services-grid">
@@ -59,5 +65,23 @@
         <p><a href="mailto:blautavika@gmail.com">blautavika@gmail.com</a></p>
       </footer>
     </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  });
+</script>
 </body>
 </html>
