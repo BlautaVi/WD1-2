@@ -109,6 +109,7 @@ textarea {
     font-family: Georgia, serif;
     background-color: #772014;
     overflow-x: hidden;
+    padding-top: 40px;
   }
 }
   .navbar {
@@ -141,22 +142,22 @@ textarea {
     color: black;
     border-radius: 5px;
   }
-.burger-menu {
-  align-items: center;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
-  width: 30px;
-  cursor: pointer;
-  z-index: 1001;
-}
-.burger-menu span {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  transition: all 0.3s ease;
-}
+  .burger-menu {
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .burger-menu span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
   .news-section {
       padding: 40px 20px;
       background: black;
@@ -214,32 +215,6 @@ textarea {
       font-size: 0.9em;
       margin-bottom: 15px;
     }
-  .carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .carousel-wrapper {
-      display: flex;
-      gap: 10px;
-    }
-
-  .MySlides {
-      width: 240px;
-      height: 300px;
-      object-fit: cover;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      cursor: pointer;
-      border-radius: 10px;
-    }
-  .MySlides:hover {
-      opacity: 0.8;
-      transform: translateY(5px);
-    }
   .news-content p {
       color: #F1EFE4;
       line-height: 1.6;
@@ -270,12 +245,6 @@ textarea {
         text-align: center;
         position: sticky;
         top: 0;
-      }
-      .carousel-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0px;
       }
       .form-row {
         grid-template-columns: 1fr;
@@ -375,7 +344,7 @@ textarea {
       }
       .form-box {
         max-width: 100%;
-        padding: 15px;
+        padding: 35px;
       }
       .form-title {
         font-size: 1.5em;
@@ -557,12 +526,16 @@ textarea {
 
     .radio-group {
       display: flex;
-      gap: 3px;
-      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
       align-items: center;
+
     }
     .radio-group label {
-      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 16px;
     }
     button:hover {
       background-color: #218838;
