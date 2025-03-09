@@ -141,6 +141,22 @@ textarea {
     color: black;
     border-radius: 5px;
   }
+.burger-menu {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.burger-menu span {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
   .news-section {
       padding: 40px 20px;
       background: black;
@@ -206,22 +222,7 @@ textarea {
     gap: 10px;
     padding: 10px;
   }
-  .burger-menu {
-    align-items: center;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    width: 30px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-  .burger-menu span {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    transition: all 0.3s ease;
-  }
+
   .carousel-wrapper {
       display: flex;
       gap: 10px;
@@ -313,6 +314,9 @@ textarea {
         display: flex;
         align-items: center;
         height: 25px;
+      }
+      .burger-menu:not(:first-child) {
+        display: none;
       }
       .burger-menu.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
