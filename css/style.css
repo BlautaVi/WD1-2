@@ -17,8 +17,6 @@ html, body {
   background: #b3d4fc;
   text-shadow: none;
 }
-
-
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -31,7 +29,6 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-
 audio,
 canvas,
 iframe,
@@ -40,13 +37,11 @@ svg,
 video {
   vertical-align: middle;
 }
-
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-
 textarea {
   resize: vertical;
 }
@@ -54,7 +49,6 @@ textarea {
 [hidden] {
   display: none !important;
 }
-
 .visually-hidden {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -79,19 +73,19 @@ textarea {
 .invisible {
   visibility: hidden;
 }
-
 .clearfix::before,
 .clearfix::after {
   content: "";
   display: table;
 }
-
 .clearfix::after {
   clear: both;
 }
-
 @media only screen and (min-width: 35em) {
-
+  .navbar {
+    position: static;
+    padding: 20px;
+  }
 }
 ::-moz-selection {
   background: #b3d4fc;
@@ -112,29 +106,39 @@ textarea {
     padding-top: 40px;
   }
 }
-  .navbar {
-    background: #19180A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(230, 57, 70, 0.5);
-  }
-  .navbar a {
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    margin: 0 10px;
-    transition: 0.3s ease-in-out;
-  }
+.wrap-logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 20px;
+  margin-right: auto;
+}
+
+.logo > img {
+    max-height: 50px;
+}
+.navbar {
+  background: #19180A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(230, 57, 70, 0.5);
+}
+.navbar a {
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: 0.3s ease-in-out;
+}
   .nav-links {
-    display: flex;
+    display: inline-block;
     align-items: center;
   }
   .navbar a:hover {
@@ -151,6 +155,7 @@ textarea {
     width: 30px;
     cursor: pointer;
     z-index: 1001;
+    margin-left: auto;
   }
   .burger-menu span {
     height: 3px;
@@ -235,16 +240,11 @@ textarea {
   }
 
     @media (max-width: 768px) {
-      .body{
-        width: 100%;
-        height: auto;
-      }
       .navbar {
-        position: fixed;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        top: 0;
+        padding-bottom: 20px;
       }
       .form-row {
         grid-template-columns: 1fr;
@@ -254,7 +254,7 @@ textarea {
         margin-bottom: 15px;
       }
       .nav-links {
-        display: none;
+        display: flex;
         position: fixed;
         top: 0;
         right: 0;
@@ -281,12 +281,8 @@ textarea {
       }
       .burger-menu {
         display: flex;
-        align-items: center;
-        height: 25px;
       }
-      .burger-menu:not(:first-child) {
-        display: none;
-      }
+
       .burger-menu.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
       }
@@ -302,7 +298,6 @@ textarea {
       .burger-menu.active span:nth-child(2) {
         opacity: 0;
       }
-
       .burger-menu.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
@@ -337,20 +332,20 @@ textarea {
         font-size: 2em;
         color: white;
       }
-      input, textarea, button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1em;
-      }
       .form-box {
         max-width: 100%;
         padding: 35px;
       }
       .form-title {
-        font-size: 1.5em;
+        padding-top: 80px;
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 20px;
       }
       .form-subtitle {
-        font-size: 0.9em;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 20px;
       }
       .Info {
         flex-direction: column;
@@ -363,8 +358,8 @@ textarea {
         margin: 0 auto;
       }
       .text-content {
-        margin-top: 20px;
-        padding: 15px;
+        padding-top: 90px;
+
         width: 100%;
         box-shadow: 0 0 10px red;
       }
@@ -383,12 +378,117 @@ textarea {
         max-width: 300px;
       }
       .form-row {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+      .form-group {
+        flex: 1 1 30%;
+        margin-bottom: 15px;
       }
       .profile-img:hover {
         transform: scale(1.05);
       }
+      .contact {
+        padding: 20px;
+      }
+      .form-group input,
+      .form-group label {
+        width: 100%;
+        text-align: center;
+      }
+
+      .radio-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .radio-group label {
+        margin: 0 5px;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .news-section h2{
+        padding-top: 90px;
+      }
     }
+@media (min-width: 769px) {
+  .contact {
+    padding: 40px;
+  }
+
+  .form-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .form-group {
+    flex: 1 1 30%;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .radio-group label {
+    margin: 0 10px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+  @media (max-width: 480px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer a {
+      width: 100%;
+    }
+  }
     .footer {
       background-color: #772014;
       width: 100%;
